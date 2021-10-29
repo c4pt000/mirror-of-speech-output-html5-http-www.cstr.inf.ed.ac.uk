@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0032)http://127.0.0.1/onlinedemo.html -->
+<html lang="en"><!-- Mirrored from www.cstr.ed.ac.uk/projects/festival/onlinedemo.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Oct 2021 16:20:20 GMT --><!-- Added by HTTrack --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!-- /Added by HTTrack -->
+
+  
+ <!--- base href="http://www.cstr.inf.ed.ac.uk/" -->
+ <meta name="keywords" content="Research, speech recognition, speech recognition, speech processing, postgraduate degree, PhD, MSc, studentship, Festival,">
+ <meta name="generator" content="emacs">
+ <meta name="robots" content="index,follow">
+ <meta name="distribution" content="global">
+ <link rel="SHORTCUT ICON" href="https://www.cstr.ed.ac.uk/favicon.ico">
+ <link type="text/css" rel="stylesheet" href="./cstr.css">
+ <title>nina speech output, http://www.cstr.inf.ed.ac.uk/</title>
+</head>
+
+<body>
+
+
+
+
+<div id="content">
+
+
+    <script src="./jsapi" type="text/javascript" charset="utf-8"></script>
+    <script src="./jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+        $("form").submit(function () {
+            $.ajaxSetup({
+              timeout: 0,  
+              cache: false
+            });
+            $.getJSON("https://www.cstr.ed.ac.uk/cgi-bin/cstr/festivalspeak.cgi?callback=?",
+            {voice:$("#voice").val(), UserText: $("#UserText").val(), AJAX: $("#AJAX").val()}, 
+            callback
+            ); 
+            return false;
+        });
+        });
+        function callback(data, status) {
+                $("#player").html("<audio controls src="+ data["wavurl"] + " autoplay >");
+        }
+    </script>
+
+
+
+
+    <!-- <form method="POST" action="https://www.cstr.ed.ac.uk/cgi-bin/cstr/festivalspeak.cgi">  -->
+    <form method="post" action="http://127.0.0.1/index.html#" class="formevent" id="formevent" name="formevent"> 
+    <input type="hidden" id="AJAX" name="AJAX" value="on"> 
+    <p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+    
+
+    <tr>
+      <td>
+        <select hidden id='voice' name='voice' >
+         <optgroup label="">
+            <option value="nina"></option>
+    </optgroup>
+
+      <td>
+		
+        <input type="text" id="UserText" name="UserText" size="70" maxlength="70" value="hello how are you?" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAzlJREFUWAndV81LYlEUPz7MTLJyhqSZsUVFUKQVtBERJty6a9MwsxT6A1q0EmzRav6JNuHMpk0Ll9JIUBvBiTaBO50GxMzoS1R0znm9e/G+93ypvUcwF/Tee8655/fznPtxtAG2vb29T81m8zsO19vt9keSmdVsNtsV+jq22+078Xj8j9qvTQH/jcDv1Uoz50jkGkmsqElI9MutBqcfQhhKlIXfJeFsXZBYO9FgSWbn3Ii/HhZF4E3b/01gcXERtre3gfpuzdIILC0twdjYGFDfrVlKAM++jMt6PRKWEtADVMsEAsPDwzA3Nwcej0dtB4PqNI5UAjubT0xMQCwWA7fbDa1WC46OjiCXy8nqQXXMt1HPIxAMBmVwMpYkCSKRCF83qI47MBhwAgY2lqo4gbOzM7i7u5PBKAXpdJoDD6rjDgwGtkQi0WZ62mg+nw8qlQrc3Nwwsdwb6QTDFyZ4JP+iyS+lPigIBF5Ya6oaiVSQxCpPganee3CGL+M7qg/ejIDC8TO/B3og3ZMJHeFAIAB+vx8mJydhdHQUGo0GnJ6eQiaTEXxgFD6YSoDANjc3YXp6WgDCXMPIyIggYxNTCWxsbAjg5XIZbm9vYWhoCB4eHhim0JtGYH5+HmZnZ2XnT09PkEwmoVAoCGB6EwmPA9Xtr24LCwvcB+UadziEQiFYW1sDeku6NYrAMX6+djPoVd6Z9/Hxcdja2gJWB9TrdTg8PITLy0uNO4luJDS81mj6FLhcLr6CHi8GTkKHwwHRaBRoM6qbRP9UULGCC5L4GTgdTqeT+65Wq3BwcAAnJydcRqXZ1NQUn7OBTEn5u/SNCY36zrej0+7+/p7n+uLiAvL5vLwJw+EwN6PUFItFPqeBaTdh5+Pl9XplkM6okIC9trJS+dImpVPbx/j8/BxmZmbkFXQk1XcC3YalUknj0bQIUPl2dfW8hWgDLi8vC7UlHc1arfZ6Auic3nNNw3sd9vf3IZvNAh071h4fHyGVSgkbkunI13PhziQ99Lu7uz8Q7IuRKUWAKmsKu17e2Vq0+9l3CpR7o8Kc6PUUDaqqXgCngmSnbwJ4ZAu4cJXYUwj1CBjJaA2tJR/k6x99KjKU2KHSNQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+		
+      </td>
+      <td>
+	<input type="submit" id="submit" name="submit" value="speech output">
+      </td>	
+    </tr> 
+    
+    </tbody></table></p>
+    </form> 
+
+    <div id="player"></div>
+
+    <br> 
+    
+    
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+</body></html>
